@@ -1,0 +1,33 @@
+package com.codelectro.runningapp.repositories
+
+import com.codelectro.runningapp.db.Run
+import com.codelectro.runningapp.db.RunDAO
+import javax.inject.Inject
+
+class MainRepository @Inject constructor(
+    val runDao: RunDAO
+) {
+
+    suspend fun insertRun(run: Run) = runDao.insertRun(run)
+
+    suspend fun deleteRun(run: Run) = runDao.deleteRun(run)
+
+    fun getAllRunsSortedByDate() = runDao.getAllRunsSortedByDate()
+
+    fun getAllRunsSortedByTimeInMillis() = runDao.getAllRunsSortedByTimeInMillis()
+
+    fun getAllRunsSortedByDistance() = runDao.getAllRunsSortedByDistance()
+
+    fun getAllRunsSortedByAvgSpeed() = runDao.getAllRunsSortedByAvgSpeed()
+
+    fun getAllRunsSortedByCaloriesBurned() = runDao.getAllRunsSortedByCaloriesBurned()
+
+    fun getTotalAvgSpeed() = runDao.getTotalAvgSpeed()
+
+    fun getTotalCaloriesBurned() = runDao.getTotalCaloriesBurned()
+
+    fun getTotalDistance() = runDao.getTotalDistance()
+
+    fun getTotalTimeInMillis() = runDao.getTotalTimeInMillis()
+
+}
